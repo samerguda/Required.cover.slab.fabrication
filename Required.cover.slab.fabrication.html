@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Slab Fabrication</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid violet;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: violet;
+            color: white;
+        }
+        button {
+            margin-right: 10px;
+            padding: 10px 15px;
+            background-color: violet;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkviolet;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cover Slab Fabrication</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Sl No.</th>
+                <th>Location</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>wo 92. 68+578.87</td>
+                <td>Required cover slab fabrication</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>69+297</td>
+                <td>Required cover slab fabrication</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>79+312</td>
+                <td>Required cover slab fabrication</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>80+175</td>
+                <td>Required cover slab fabrication</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>80+726</td>
+                <td>Required cover slab fabrication</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>2 shafts (tunnel no 3 exit)</td>
+                <td>Required cover slab fabrication</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="sendWhatsApp()">Send via WhatsApp</button>
+    <button onclick="copyContent()">Copy Content</button>
+    <button onclick="window.print()">Print</button>
+
+    <script>
+        function sendWhatsApp() {
+            const table = document.querySelector('table').outerHTML;
+            const url = `https://wa.me/?text=${encodeURIComponent(table)}`;
+            window.open(url, '_blank');
+        }
+
+        function copyContent() {
+            const table = document.querySelector('table').outerHTML;
+            const tempInput = document.createElement('textarea');
+            tempInput.value = table;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('Content copied to clipboard');
+        }
+    </script>
+</body>
+</html>
